@@ -27,4 +27,16 @@ public class LlistaArticles extends Llista<Article> implements Serializable {
         }       
         return false;
     }
+
+    /**
+     * Versión alternativa del método contains usando for-each y Objects.equals
+     */
+    public boolean contains(String articleId) {
+        for (Article a : this.llista) {
+            if (java.util.Objects.equals(a.getId(), articleId)) {
+                return true;
+            }
+        }
+        return false;
+    }
 }
